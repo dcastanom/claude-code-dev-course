@@ -9,7 +9,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 **Before writing any code**, you MUST check the `/docs` directory for a relevant documentation file and follow it. The `/docs` directory contains authoritative guides for the libraries and tools used in this project. Do not rely on training data when a doc file exists — read it first.
 
 Key docs to consult:
+- `docs/auth.md` — **mandatory reading before any authentication or user-identity work**. Covers the Clerk-only rule, `<ClerkProvider>` placement, server-side `auth()` usage, and Clerk UI components.
 - `docs/data-fetching.md` — **mandatory reading before any data fetching or database work**. Covers the Server Components-only rule, the `src/data/` helper pattern, and the per-user data scoping requirement.
+- `docs/data-mutations.md` — **mandatory reading before any data mutation work**. Covers the `src/data/` helper pattern for writes, the colocated `actions.ts` server action rule, typed parameters (no `FormData`), and Zod validation requirements.
 
 ## Commands
 
