@@ -1,0 +1,10 @@
+{
+  "eval_id": 2,
+  "eval_name": "natural-language",
+  "prompt": "How many workouts have I done each month over the past year? Show me a chart.",
+  "assertions": [
+    "The agent triggers the workout-chart skill rather than trying to fetch data manually",
+    "The agent uses the bundled generate_chart.py script (not a custom one)",
+    "The agent reports the file path of the saved PNG"
+  ]
+}

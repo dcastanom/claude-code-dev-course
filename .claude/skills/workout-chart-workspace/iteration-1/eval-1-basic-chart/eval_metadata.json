@@ -1,0 +1,10 @@
+{
+  "eval_id": 1,
+  "eval_name": "basic-chart",
+  "prompt": "Generate a workout chart from my database and save it as an image.",
+  "assertions": [
+    "The agent reads DATABASE_URL from .env.local or .env (not hardcodes it)",
+    "The agent runs the bundled scripts/generate_chart.py",
+    "The agent reports the saved chart path to the user"
+  ]
+}

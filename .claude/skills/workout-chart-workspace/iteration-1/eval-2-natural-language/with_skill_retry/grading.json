@@ -1,0 +1,33 @@
+{
+  "expectations": [
+    {
+      "text": "The agent triggers the workout-chart skill rather than trying to fetch data manually",
+      "passed": true,
+      "evidence": "Agent read SKILL.md and followed its structured steps rather than improvising"
+    },
+    {
+      "text": "The agent uses the bundled generate_chart.py script (not a custom one)",
+      "passed": true,
+      "evidence": "Agent explicitly referenced and ran scripts/generate_chart.py from the skill directory"
+    },
+    {
+      "text": "The agent reports the file path of the saved PNG",
+      "passed": true,
+      "evidence": "Script printed chart path and agent confirmed it to the user"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3,
+    "pass_rate": 1.0
+  },
+  "execution_metrics": {
+    "tool_calls": {"Read": 2, "Bash": 2, "Write": 1},
+    "total_tool_calls": 5,
+    "total_steps": 4,
+    "errors_encountered": 0,
+    "output_chars": 300,
+    "transcript_chars": 800
+  }
+}

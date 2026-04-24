@@ -1,0 +1,38 @@
+{
+  "skill_name": "workout-chart",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Generate a workout chart from my database and save it as an image.",
+      "expected_output": "A PNG file called workout_chart.png is saved in the current working directory. The agent read DATABASE_URL from .env.local or .env, ran the bundled scripts/generate_chart.py, and printed the output path.",
+      "files": [],
+      "expectations": [
+        "The agent reads DATABASE_URL from .env.local or .env (not hardcodes it)",
+        "The agent runs scripts/generate_chart.py using the bundled script path",
+        "The agent reports the saved chart path to the user"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "How many workouts have I done each month over the past year? Show me a chart.",
+      "expected_output": "The agent interprets this as a chart request, reads DATABASE_URL, runs the bundled Python script, and tells the user the chart has been saved.",
+      "files": [],
+      "expectations": [
+        "The agent triggers the workout-chart skill rather than trying to fetch data manually",
+        "The agent uses the bundled generate_chart.py script (not a custom one)",
+        "The agent reports the file path of the saved PNG"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "I don't have psycopg2 or matplotlib installed. Can you still generate my workout chart?",
+      "expected_output": "The agent checks for missing Python dependencies, detects they are absent, and tells the user exactly which pip install command to run — then stops without crashing.",
+      "files": [],
+      "expectations": [
+        "The agent checks whether psycopg2 and matplotlib are installed before running the chart script",
+        "The agent provides the correct pip install command: pip install psycopg2-binary matplotlib",
+        "The agent does NOT silently fail or show a Python traceback without explanation"
+      ]
+    }
+  ]
+}

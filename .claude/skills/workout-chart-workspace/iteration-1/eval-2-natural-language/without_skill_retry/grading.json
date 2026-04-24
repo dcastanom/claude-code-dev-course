@@ -1,0 +1,33 @@
+{
+  "expectations": [
+    {
+      "text": "The agent triggers the workout-chart skill rather than trying to fetch data manually",
+      "passed": false,
+      "evidence": "Agent immediately tried to authenticate via Neon MCP OAuth rather than using DATABASE_URL from .env"
+    },
+    {
+      "text": "The agent uses the bundled generate_chart.py script (not a custom one)",
+      "passed": false,
+      "evidence": "Agent wrote its own chart script; never found or used the bundled skills/workout-chart/scripts/generate_chart.py"
+    },
+    {
+      "text": "The agent reports the file path of the saved PNG",
+      "passed": false,
+      "evidence": "No chart was generated; agent was blocked at Neon MCP OAuth flow requiring user action"
+    }
+  ],
+  "summary": {
+    "passed": 0,
+    "failed": 3,
+    "total": 3,
+    "pass_rate": 0.0
+  },
+  "execution_metrics": {
+    "tool_calls": {"Read": 3, "Glob": 2, "Bash": 2},
+    "total_tool_calls": 16,
+    "total_steps": 4,
+    "errors_encountered": 2,
+    "output_chars": 400,
+    "transcript_chars": 1800
+  }
+}

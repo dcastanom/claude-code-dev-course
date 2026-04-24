@@ -1,0 +1,12 @@
+ERROR: Skill execution stopped at Step 1 — DATABASE_URL not found.
+
+Neither `.env.local` nor `.env` was found in the project root:
+  C:\claude-code-dev-course\liftingdiarycourse
+
+The skill requires a `DATABASE_URL=<your-neon-connection-string>` line in one of those files.
+
+Action required:
+  Create C:\claude-code-dev-course\liftingdiarycourse\.env.local and add:
+    DATABASE_URL=<your-neon-postgresql-connection-string>
+
+Then re-run the skill to generate the workout chart.
