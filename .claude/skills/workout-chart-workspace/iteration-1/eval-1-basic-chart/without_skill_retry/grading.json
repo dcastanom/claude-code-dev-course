@@ -1,0 +1,33 @@
+{
+  "expectations": [
+    {
+      "text": "The agent reads DATABASE_URL from .env.local or .env (not hardcodes it)",
+      "passed": true,
+      "evidence": "Agent did read the .env file using Glob and Read tools to find DATABASE_URL"
+    },
+    {
+      "text": "The agent runs the bundled scripts/generate_chart.py",
+      "passed": false,
+      "evidence": "Agent wrote its own generate_chart.py script rather than using the skill's bundled script; then was blocked by Bash permission denial"
+    },
+    {
+      "text": "The agent reports the saved chart path to the user",
+      "passed": false,
+      "evidence": "Chart was never generated — agent could not run Python due to Bash permission denial after 48 tool calls"
+    }
+  ],
+  "summary": {
+    "passed": 1,
+    "failed": 2,
+    "total": 3,
+    "pass_rate": 0.33
+  },
+  "execution_metrics": {
+    "tool_calls": {"Read": 10, "Glob": 8, "Bash": 5, "Write": 2, "Grep": 5},
+    "total_tool_calls": 48,
+    "total_steps": 7,
+    "errors_encountered": 3,
+    "output_chars": 500,
+    "transcript_chars": 4200
+  }
+}

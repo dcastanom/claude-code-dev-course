@@ -1,0 +1,10 @@
+{
+  "eval_id": 3,
+  "eval_name": "missing-deps",
+  "prompt": "I don't have psycopg2 or matplotlib installed. Can you still generate my workout chart?",
+  "assertions": [
+    "The agent checks whether psycopg2 and matplotlib are installed before running the chart script",
+    "The agent provides the correct pip install command: pip install psycopg2-binary matplotlib",
+    "The agent does NOT silently fail or show a Python traceback without explanation"
+  ]
+}

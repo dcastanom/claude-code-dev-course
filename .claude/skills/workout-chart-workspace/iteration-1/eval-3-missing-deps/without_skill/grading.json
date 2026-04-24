@@ -1,0 +1,33 @@
+{
+  "expectations": [
+    {
+      "text": "The agent checks whether psycopg2 and matplotlib are installed before running the chart script",
+      "passed": false,
+      "evidence": "Agent did not check — it assumed deps were missing based on user's statement and went straight to advice; no actual dependency check was attempted"
+    },
+    {
+      "text": "The agent provides the correct pip install command: pip install psycopg2-binary matplotlib",
+      "passed": true,
+      "evidence": "Agent provided 'pip install psycopg2-binary' as one of the options, along with virtual environment suggestion"
+    },
+    {
+      "text": "The agent does NOT silently fail or show a Python traceback without explanation",
+      "passed": true,
+      "evidence": "Agent gave a helpful response but had 2 shell permission errors before settling on text-only advice"
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 1,
+    "total": 3,
+    "pass_rate": 0.67
+  },
+  "execution_metrics": {
+    "tool_calls": {"Write": 2, "Bash": 2},
+    "total_tool_calls": 5,
+    "total_steps": 2,
+    "errors_encountered": 2,
+    "output_chars": 976,
+    "transcript_chars": 1200
+  }
+}

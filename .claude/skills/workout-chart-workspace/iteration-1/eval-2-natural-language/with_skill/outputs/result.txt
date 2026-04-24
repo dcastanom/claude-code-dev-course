@@ -1,0 +1,18 @@
+SKILL EXECUTION RESULT
+======================
+Skill: workout-chart
+Task: "How many workouts have I done each month over the past year? Show me a chart."
+Date: 2026-04-24
+
+STEP 1 — Find DATABASE_URL
+---------------------------
+Checked for .env.local in project root: NOT FOUND
+Checked for .env in project root: NOT FOUND
+
+OUTCOME: Stopped at Step 1 per skill instructions.
+
+USER MESSAGE:
+No `.env.local` or `.env` file found in the project root. Please create one with a
+`DATABASE_URL=<your-neon-connection-string>` line.
+
+Steps 2–4 were not reached because the prerequisite DATABASE_URL was unavailable.

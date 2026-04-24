@@ -1,0 +1,23 @@
+Since `psycopg2` and `matplotlib` are not installed, I cannot generate the workout chart in its current form — those packages are required to query the PostgreSQL database and render the chart image.
+
+Here are your options to proceed:
+
+**Option 1: Install the missing packages (recommended)**
+Run the following in your terminal:
+```
+pip install psycopg2-binary matplotlib
+```
+Use `psycopg2-binary` instead of `psycopg2` — it includes precompiled binaries so you don't need a local PostgreSQL installation to build it.
+
+**Option 2: Use a virtual environment**
+If you prefer to keep dependencies isolated:
+```
+python -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install psycopg2-binary matplotlib
+```
+
+**Option 3: Export data another way**
+If you cannot install these packages at all (e.g. locked-down environment), I can rewrite the chart generation to use only the standard library — but that would require switching away from PostgreSQL queries and matplotlib rendering. Let me know if that's your situation and I'll adapt the approach.
+
+Would you like me to proceed with one of these options?

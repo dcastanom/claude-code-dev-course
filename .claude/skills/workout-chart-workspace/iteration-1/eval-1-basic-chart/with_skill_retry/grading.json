@@ -1,0 +1,33 @@
+{
+  "expectations": [
+    {
+      "text": "The agent reads DATABASE_URL from .env.local or .env (not hardcodes it)",
+      "passed": true,
+      "evidence": "Agent read .env file using Read tool and extracted DATABASE_URL before passing it as env var to the script"
+    },
+    {
+      "text": "The agent runs the bundled scripts/generate_chart.py",
+      "passed": true,
+      "evidence": "Agent ran scripts/generate_chart.py via Bash with DATABASE_URL env var; chart saved to correct output path"
+    },
+    {
+      "text": "The agent reports the saved chart path to the user",
+      "passed": true,
+      "evidence": "Script printed 'Chart saved to: ...' and agent relayed path to user"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3,
+    "pass_rate": 1.0
+  },
+  "execution_metrics": {
+    "tool_calls": {"Read": 2, "Bash": 2, "Write": 1},
+    "total_tool_calls": 5,
+    "total_steps": 4,
+    "errors_encountered": 0,
+    "output_chars": 300,
+    "transcript_chars": 800
+  }
+}
